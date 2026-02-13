@@ -50,4 +50,74 @@ public class PostFacadeTest {
                     assertThat(post.slug()).isNotBlank();
                 });
     }
+
+    @Test
+    public void createPost_shouldCreatePost_whenValidData() {
+        // given
+        // when
+        // then
+    }
+
+    @Test
+    public void createPost_shouldNotCreatePost_whenTitleIsBlank() {
+        // given
+        // when
+        // then
+    }
+
+    @Test
+    public void updatePost_shouldUpdatePost_whenPostExists() {
+        // given
+        // when
+        // then
+    }
+
+    @Test
+    public void updatePost_shouldNotUpdatePost_whenValidationFails() {
+        // given
+        // when
+        // then
+    }
+
+    @Test
+    public void deletePost_shouldDeletePost_whenPostExists() {
+        // given
+        // when
+        // then
+    }
+
+    @Test
+    public void deletePost_shouldThrowException_whenDeletingNonExistingPost() {
+        // given
+        // when
+        // then
+    }
+
+    @Test
+    public void getPostById_shouldReturnPost_whenPostExists() {
+        // given
+        // when
+        // then
+    }
+
+    @Test
+    public void getAllPosts_shouldReturnAllPosts_whenPostsExist() {
+        // given
+        // when
+        // then
+    }
+
+    @Test
+    public void validationErrors_shouldThrowValidationException_whenTitleIsBlank() {
+        // given
+        // when
+        // then
+    }
+
+    @Test
+    public void notFoundException_shouldThrowPostNotFoundException_whenGettingNonExistingPost() {
+        // given
+        // when
+        // then
+    }
 }
