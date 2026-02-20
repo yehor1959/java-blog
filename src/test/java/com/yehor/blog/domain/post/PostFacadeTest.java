@@ -24,8 +24,23 @@ public class PostFacadeTest {
     @Mock
     private PostRepository postRepository;
 
+    @Mock
+    private PostService postService;
+
     @InjectMocks
     private PostFacade postFacade;
+
+    @Test
+    public void deletePostById_shouldDeletePostById_whenPostExists() {
+        // given
+        String postId = "1";
+
+        // when
+        postFacade.deletePostById(postId);
+
+        // then
+        verify(postService, times(1)).deletePostById(postId);
+    }
 
     @Test
     public void createPost_shouldCreatePost_whenDataIsValid() {
@@ -109,14 +124,7 @@ public class PostFacadeTest {
     }
 
     @Test
-    public void deletePost_shouldDeletePost_whenPostExists() {
-        // given
-        // when
-        // then
-    }
-
-    @Test
-    public void deletePost_shouldThrowException_whenDeletingNonExistingPost() {
+    public void deletePostById_shouldThrowException_whenDeletingNonExistingPost() {
         // given
         // when
         // then
