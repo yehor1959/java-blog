@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 public class PostFacade {
 
     private final PostRepository postRepository;
+    private final PostService postService;
 
     public List<PostResponseDto> findAllPosts() {
         return postRepository.findAll()
@@ -23,6 +24,10 @@ public class PostFacade {
         Post post = PostMapper.mapFromPostDtoToPost(postRequestDto);
         Post saved = postRepository.save(post);
         return PostMapper.mapFromPostToPostDto(saved);
+    }
+
+    public void deletePostById(String id) {
+        postService.deletePostById(id);
     }
 
     void initializePosts() {

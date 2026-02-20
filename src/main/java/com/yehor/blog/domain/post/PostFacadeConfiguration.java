@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class PostFacadeConfiguration {
 
     @Bean
-    PostFacade postFacade(PostRepository postRepository) {
-        return new PostFacade(postRepository);
+    PostFacade postFacade(PostRepository postRepository, PostService postService) {
+        return new PostFacade(postRepository, postService);
     }
 }
